@@ -4,7 +4,7 @@ This package provides React hooks for running code at intervals.
 
 ## Install
 
-```text
+```bash
 npm install interval-hooks
 
 # or
@@ -28,7 +28,7 @@ You can set the delay to `null` to stop the interval from running.
 
 ```js
 useInterval(() => {
-  console.log("This won't run because the `delay` is null.');
+  console.log("This won't run because the `delay` is null.");
 }, null);
 ```
 
