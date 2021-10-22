@@ -32,20 +32,20 @@ useInterval(() => {
 }, null);
 ```
 
-### `useSynchronousInterval`
+### `useSynchronizedInterval`
 
-The `useSynchronousInterval` hook is just like `useInterval`, however it will run all functions with the same delay at the same time.
+The `useSynchronizedInterval` hook is just like `useInterval`, however it will run all functions with the same delay at the same time.
 
 ```js
-useSynchronousInterval(() => {
+useSynchronizedInterval(() => {
   console.log('These console logs will happen at the same time.');
 }, 5000);
 
 // wait 3 seconds...
 
-useSynchronousInterval(() => {
+useSynchronizedInterval(() => {
   console.log('These console logs will happen at the same time.');
 }, 5000);
 ```
 
-Synchronous intervals are useful for calling functions that need to happen at the same time, like ticking clocks.
+Synchronized intervals are useful for calling functions that need to happen at the same time, like ticking clocks.

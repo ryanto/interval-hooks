@@ -1,2 +1,2 @@
 export { useInterval } from './use-interval';
-export { useSynchronousInterval } from './use-synchronous-interval';
+export { useSynchronizedInterval } from './use-synchronized-interval';

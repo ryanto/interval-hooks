@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useSynchronousInterval } from '../.';
+import { useSynchronizedInterval } from '../.';
 
 const BackgroundColor = () => {
   let [isOn, setIsOn] = React.useState(false);
@@ -18,7 +18,7 @@ const BackgroundColor = () => {
     setIndex(index => (index + 1) % backgrounds.length);
   };
 
-  useSynchronousInterval(
+  useSynchronizedInterval(
     () => {
       changeBackground();
     },

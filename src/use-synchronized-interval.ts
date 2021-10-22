@@ -42,7 +42,7 @@ let removeFromIntervalBucket = function(delay: number, callback: Callback) {
   }
 };
 
-export const useSynchronousInterval = (
+export const useSynchronizedInterval = (
   fn: intervalFn,
   delay: number | null
 ) => {
