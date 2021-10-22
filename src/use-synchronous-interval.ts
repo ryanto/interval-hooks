@@ -28,12 +28,12 @@ let setupBucket = (delay: number): Bucket => {
   return bucket;
 };
 
-let addSyncInterval = function(delay: number, callback: Callback) {
+let addToIntervalBucket = function(delay: number, callback: Callback) {
   let bucket = setupBucket(delay);
   bucket.callbacks = [...bucket.callbacks, callback];
 };
 
-let removeSyncInterval = function(delay: number, callback: Callback) {
+let removeFromIntervalBucket = function(delay: number, callback: Callback) {
   let bucket = setupBucket(delay);
   bucket.callbacks = bucket.callbacks.filter(c => c !== callback);
   if (bucket.callbacks.length === 0) {
@@ -56,10 +56,10 @@ export const useSynchronousInterval = (
   // Add the callback as the sync interval.
   useEffect(() => {
     if (delay !== null) {
-      addSyncInterval(delay, callback);
+      addToIntervalBucket(delay, callback);
 
       return () => {
-        removeSyncInterval(delay, callback);
+        removeFromIntervalBucket(delay, callback);
       };
     } else {
       return;
